@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="col-md-10">
+      <form #f="ngForm" (ngSubmit)="save(f.value)">
+          <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" class="form-control" required name="name" #name="ngModel" ngModel  minlength="4">
+            <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                <div *ngIf="name.errors.required">Please Enter Your Product Name</div>
+                <div *ngIf="name.errors.minLength">Min Length Product Is 
+                  {{name.errors.minLength.requiredLength}}
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">Image Url</label>
+            <input type="text" id="imageUrl" class="form-control" required name="imageUrl" #imageUrl="ngModel" ngModel>
+            <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+                <div *ngIf="imageUrl.errors.required">Please Enter Your Product ImageUrl</div>
+                <div *ngIf="imageUrl.errors.url">Please Enter Valid URL</div>
+        
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="category">Categories</label>
+            <select id="category" class="form-control" name="category" required ngModel>
+              <option>Categories</option>
+              <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="price">Price</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="text" id="price" class="form-control" [min]="0" name="price" required #price="ngModel" ngModel aria-label="Amount (to the nearest dollar)">
+            
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors.required">Please Enter Your Product Price</div>
+                <div *ngIf="price.errors.min">Min Price Is Zero</div>
+        
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <label for="Date">Date</label>
+            <input type="date" class="form-control"  id="date" name="date" required #date="ngModel" ngModel >
+            <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors.required">Please Choose Date</div>
+          </div>
+          </div>
+          <button class="btn btn-dark">Save</button>
+        </form>
+  </div>
+
+
+</div>

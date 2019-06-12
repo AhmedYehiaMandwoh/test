@@ -1,0 +1,30 @@
+<a routerLink="/admin/products/new" class="btn btn-secondary mt-5 mb-3">Add New Product</a>
+<table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col">Num</th>
+        <th scope="col">Name</th>
+        <th scope="col">imageUrl</th>
+        <th scope="col">category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$ | async index as i">
+        <td>{{i+1}}</td>
+        <td>{{product.payload.val().name}}</td>
+        <td><img [src]="product.payload.val().imageUrl" alt=""></td>
+        <td>{{product.payload.val().category}}$</td>
+        <td>{{product.payload.val().price}}$</td>
+        <td>{{product.payload.val().date}}</td>
+        <td>
+          <a [routerLink]="['/admin/products/edit', product.key]" class="btn btn-dark">Edit</a>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>

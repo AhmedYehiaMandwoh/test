@@ -1,0 +1,102 @@
+[debug] [2019-06-12T20:53:55.329Z] ----------------------------------------------------------------------
+[debug] [2019-06-12T20:53:55.332Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ahmed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-06-12T20:53:55.332Z] CLI Version:   6.10.0
+[debug] [2019-06-12T20:53:55.332Z] Platform:      win32
+[debug] [2019-06-12T20:53:55.332Z] Node Version:  v12.3.1
+[debug] [2019-06-12T20:53:55.333Z] Time:          Wed Jun 12 2019 22:53:55 GMT+0200 (Eastern European Standard Time)
+[debug] [2019-06-12T20:53:55.333Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-12T20:53:55.343Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-12T20:53:55.344Z] > authorizing via signed-in user
+[debug] [2019-06-12T20:53:55.344Z] [iam] checking project ecommerce-9f271 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-06-12T20:53:55.346Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-12T20:53:55.346Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-12T20:53:55.853Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T20:53:55.906Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-9f271:testIamPermissions  
+
+[debug] [2019-06-12T20:54:18.144Z] Error: connect ETIMEDOUT 172.217.18.42:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1054:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 172.217.18.42:443
+[debug] [2019-06-12T21:01:51.272Z] ----------------------------------------------------------------------
+[debug] [2019-06-12T21:01:51.295Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ahmed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-06-12T21:01:51.295Z] CLI Version:   6.10.0
+[debug] [2019-06-12T21:01:51.295Z] Platform:      win32
+[debug] [2019-06-12T21:01:51.295Z] Node Version:  v12.3.1
+[debug] [2019-06-12T21:01:51.414Z] Time:          Wed Jun 12 2019 23:01:51 GMT+0200 (Eastern European Standard Time)
+[debug] [2019-06-12T21:01:51.414Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-12T21:01:51.468Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-12T21:01:51.468Z] > authorizing via signed-in user
+[debug] [2019-06-12T21:01:51.468Z] [iam] checking project ecommerce-9f271 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-06-12T21:01:51.472Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-9f271:testIamPermissions  
+
+[debug] [2019-06-12T21:01:56.092Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T21:01:56.118Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9f271  
+ 
+[debug] [2019-06-12T21:01:59.399Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'ecommerce-9f271'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-06-12T21:01:59.432Z] >>> HTTP REQUEST PUT https://ecommerce-9f271.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-06-12T21:02:02.758Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database ecommerce-9f271 is valid
+[debug] [2019-06-12T21:02:02.769Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ecommerce-9f271/versions  
+
+[debug] [2019-06-12T21:02:04.836Z] <<< HTTP RESPONSE 200
+[info] i  hosting[ecommerce-9f271]: beginning deploy...
+[info] i  hosting[ecommerce-9f271]: found 22 files in dist/eCommerce
+[debug] [2019-06-12T21:02:04.912Z] [hosting] hash cache [ZGlzdFxlQ29tbWVyY2U] load error: lines is not defined
+[debug] [2019-06-12T21:02:06.047Z] [hosting] hash cache [ZGlzdFxlQ29tbWVyY2U] stored for 22 files
+[debug] [2019-06-12T21:02:06.047Z] [hosting][hash queue][FINAL]
+[debug] [2019-06-12T21:02:06.048Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/ecommerce-9f271/versions/698aac87abb952cf:populateFiles  
+ <request body omitted>
+[debug] [2019-06-12T21:02:09.087Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T21:02:09.098Z] [hosting][populate queue][FINAL]
+[debug] [2019-06-12T21:02:09.099Z] [hosting] uploads queued: 4
+[debug] [2019-06-12T21:02:40.454Z] [uploadQueue] Retrying task 4445d0d8686b202ff2d9c18ec2746254e7f8acdae87cc6dfa412b58907b25d73
+[debug] [2019-06-12T21:02:40.557Z] [uploadQueue] Retrying task 3638f1f2d022d3ed1e34f9c8c7fdd26e82cbecd94a98d2321a341bd8c4e31980
+[debug] [2019-06-12T21:02:49.401Z] [hosting][upload queue][FINAL]
+[info] +  hosting[ecommerce-9f271]: file upload complete
+[debug] [2019-06-12T21:02:49.406Z] [hosting] deploy completed after 44565ms
+[info] i  database: releasing rules...
+[debug] [2019-06-12T21:04:37.025Z] >>> HTTP REQUEST PUT https://ecommerce-9f271.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-06-12T21:04:38.061Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database ecommerce-9f271 released successfully
+[debug] [2019-06-12T21:04:38.063Z] [
+  {
+    "config": {
+      "public": "dist/eCommerce",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "ecommerce-9f271"
+    },
+    "site": "ecommerce-9f271",
+    "version": "sites/ecommerce-9f271/versions/698aac87abb952cf"
+  }
+]
+[info] i  hosting[ecommerce-9f271]: finalizing version...
+[debug] [2019-06-12T21:04:38.064Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/ecommerce-9f271/versions/698aac87abb952cf?updateMask=status  
+
+[debug] [2019-06-12T21:04:59.457Z] Error: connect ETIMEDOUT 172.217.19.42:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1054:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 172.217.19.42:443

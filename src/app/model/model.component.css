@@ -1,0 +1,19 @@
+.box{
+    margin-top: 100px;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+}
+.details{
+    margin-top: 50px;
+}
+
+img{
+    width: 100%;
+}
+.card-title{
+    background-color: #343a40;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}

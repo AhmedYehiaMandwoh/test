@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col">
+    <h4 class="text-center mt-5">Login To See Your Unique Products</h4>
+    <div class="shop" *ngFor="let product of products$ | async index as i">
+      <div class="card-details">
+        <div class="card" *ngIf="product.payload.val().name" style="width: 15rem;">
+          <img class="card-img-top" [src]="product.payload.val().imageUrl" *ngIf="product.payload.val().imageUrl">
+          <div class="card-body">
+            <h5 class="card-title">{{product.payload.val().name}}</h5>
+            <p class="card-title">{{product.payload.val().category}}</p>
+            <p class="card-text">{{product.payload.val().price}}$</p>
+            <a [routerLink]="['/model', product.key]" class="btn btn-dark">Quik View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
